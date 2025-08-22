@@ -1,31 +1,6 @@
 ## 🌱 IPO Chart – Garden Catalog Web Application
 
-```mermaid
-flowchart LR
-    %% Define columns as groups
-    subgraph I[Inputs]
-        A1[User Location (ZIP/GPS)]
-        A2[User Preferences]
-        A3[Garden Parameters]
-        A4[External Data Sources]
-    end
+| **Input** | **Processing** | **Output** |
+|-----------|----------------|------------|
+| - User Location (ZIP/GPS)  <br> - User Preferences (plants, animals, land use)  <br> - Garden Parameters (size, soil, irrigation)  <br> - **External Data Sources:**  <br> &nbsp;&nbsp;• USDA Plant Hardiness Zones  <br> &nbsp;&nbsp;• Weather API (NWS/OpenWeather)  <br> &nbsp;&nbsp;• Soil Database (SSURGO / Web Soil Survey) | - Geolocation & Zone Lookup  <br> - Weather Forecast & Frost Risk Analysis  <br> - Soil Data Retrieval & Analysis  <br> - Plant Suitability Engine  <br> - Garden Planner & Calendar Builder  <br> - Acreage Calculator (plants/animals)  <br> - Data Storage (users, gardens, historical records) | - Plant Recommendations (Now / Indoors / Wait)  <br> - Personalized Garden Calendar  <br> - Soil & Land Suitability Report  <br> - Acreage & Land Planning Estimates  <br> - User Dashboard (saved gardens, progress tracking) |
 
-    subgraph P[Processes]
-        B1[Geolocation & Zone Lookup]
-        B2[Weather Forecast & Frost Risk]
-        B3[Soil Data Retrieval]
-        B4[Plant Suitability Engine]
-        B5[Garden Planner & Calendar]
-        B6[Acreage Calculator]
-        B7[Data Storage]
-    end
-
-    subgraph O[Outputs]
-        C1[Plant Recommendations]
-        C2[Personalized Garden Calendar]
-        C3[Soil & Land Report]
-        C4[Acreage Estimates]
-        C5[User Dashboard]
-    end
-
-    I --> P --> O
