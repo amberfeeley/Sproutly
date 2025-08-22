@@ -1,0 +1,30 @@
+## 🌱 IPO Chart – Garden Catalog Web Application
+
+```mermaid
+flowchart LR
+    subgraph Inputs
+        A1[User Location (ZIP/GPS)]
+        A2[User Preferences (plants, animals, land use)]
+        A3[Garden Parameters (size, irrigation, soil)]
+        A4[External Data (USDA Zones, Weather API, Soil DB)]
+    end
+
+    subgraph Processes
+        B1[Geolocation & Zone Lookup]
+        B2[Weather Forecast & Frost Risk]
+        B3[Soil Data Retrieval & Analysis]
+        B4[Plant Suitability Engine]
+        B5[Garden Planner & Calendar Builder]
+        B6[Acreage Calculator (plants/animals)]
+        B7[Data Storage (users, gardens, history)]
+    end
+
+    subgraph Outputs
+        C1[Plant Recommendations (Now / Wait / Indoors)]
+        C2[Personalized Garden Calendar]
+        C3[Soil & Land Suitability Report]
+        C4[Acreage & Land Planning Estimates]
+        C5[User Dashboard & Saved Plans]
+    end
+
+    Inputs --> Processes --> Outputs
