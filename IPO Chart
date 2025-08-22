@@ -1,0 +1,6 @@
+## 🌱 IPO Chart – Garden Catalog Web Application
+
+| **Input** | **Processing** | **Output** |
+|-----------|----------------|------------|
+| - User Location (ZIP/GPS)  <br> - User Preferences (plants, animals, land use)  <br> - Garden Parameters (size, soil, irrigation)  <br> - **External Data Sources:**  <br> &nbsp;&nbsp;• USDA Plant Hardiness Zones  <br> &nbsp;&nbsp;• Weather API (NWS/OpenWeather)  <br> &nbsp;&nbsp;• Soil Database (SSURGO / Web Soil Survey) | - Geolocation & Zone Lookup  <br> - Weather Forecast & Frost Risk Analysis  <br> - Soil Data Retrieval & Analysis  <br> - Plant Suitability Engine  <br> - Garden Planner & Calendar Builder  <br> - Acreage Calculator (plants/animals)  <br> - Data Storage (users, gardens, historical records) | - Plant Recommendations (Now / Indoors / Wait)  <br> - Personalized Garden Calendar  <br> - Soil & Land Suitability Report  <br> - Acreage & Land Planning Estimates  <br> - User Dashboard (saved gardens, progress tracking) |
+
