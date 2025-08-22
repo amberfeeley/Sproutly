@@ -2,29 +2,30 @@
 
 ```mermaid
 flowchart LR
-    subgraph Inputs
+    %% Define columns as groups
+    subgraph I[Inputs]
         A1[User Location (ZIP/GPS)]
-        A2[User Preferences (plants, animals, land use)]
-        A3[Garden Parameters (size, irrigation, soil)]
-        A4[External Data (USDA Zones, Weather API, Soil DB)]
+        A2[User Preferences]
+        A3[Garden Parameters]
+        A4[External Data Sources]
     end
 
-    subgraph Processes
+    subgraph P[Processes]
         B1[Geolocation & Zone Lookup]
         B2[Weather Forecast & Frost Risk]
-        B3[Soil Data Retrieval & Analysis]
+        B3[Soil Data Retrieval]
         B4[Plant Suitability Engine]
-        B5[Garden Planner & Calendar Builder]
-        B6[Acreage Calculator (plants/animals)]
-        B7[Data Storage (users, gardens, history)]
+        B5[Garden Planner & Calendar]
+        B6[Acreage Calculator]
+        B7[Data Storage]
     end
 
-    subgraph Outputs
-        C1[Plant Recommendations (Now / Wait / Indoors)]
+    subgraph O[Outputs]
+        C1[Plant Recommendations]
         C2[Personalized Garden Calendar]
-        C3[Soil & Land Suitability Report]
-        C4[Acreage & Land Planning Estimates]
-        C5[User Dashboard & Saved Plans]
+        C3[Soil & Land Report]
+        C4[Acreage Estimates]
+        C5[User Dashboard]
     end
 
-    Inputs --> Processes --> Outputs
+    I --> P --> O
