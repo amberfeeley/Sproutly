@@ -1,5 +1,5 @@
 # Sproutly
-Sproutly is a homesteading app that helps achieve all your self-sufficient needs! You can figure out what plants thrive in your area, the soil information, and when to plant as well as find land that fits your homesteading needs.
+Sproutly is a homesteading app that helps achieve all your self-sufficient needs! You can determine out what plants thrive in your area, the soil information, when to plant as well as find land that fits your homesteading needs. You will be able to keep track of when you watered your plants or last gave them nutrients with reminders for when to water or give nutrients next with our helpful calendar to help your self-sufficient journey! This app is perfect for anyone that is creating a new routine or just looking for a better way to monitor their current set-up needs.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Sproutly is a homesteading app that helps achieve all your self-sufficient needs
 
 ## Overview
 
-Describe your app in more detail here.
+Sproutly is a learning app for React and Nest.js that explores the team's interest in gardening and homesteading.
 
 ## Technologies
 
