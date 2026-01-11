@@ -1,0 +1,39 @@
+@startuml Sproutly_Use_Case_Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "User" as user
+actor "Email Validation Service" as emailSvc
+
+rectangle "Sproutly" {
+  usecase "Create Account" as UC_Create
+  usecase "Login" as UC_Login
+  usecase "Manage Garden" as UC_Garden
+  usecase "Manage Plants" as UC_Plants
+
+  usecase "Add Plant" as UC_Add
+  usecase "Update Plant" as UC_Update
+  usecase "Remove Plant" as UC_Remove
+
+  user --> UC_Create
+  user --> UC_Login
+  user --> UC_Garden
+  user --> UC_Plants
+
+  UC_Plants ..> UC_Add    : <<include>>
+  UC_Plants ..> UC_Update : <<include>>
+  UC_Plants ..> UC_Remove : <<include>>
+
+  emailSvc --> UC_Create
+
+  note right of UC_Garden
+    Precondition: User is authenticated.
+  end note
+
+  note bottom of UC_Create
+    Valid email format is required.
+    Validation/errors are alternate flows (see Activity/Requirements).
+  end note
+}
+@enduml
