@@ -1,59 +1,39 @@
-@startuml
+@startuml Sproutly_Use_Case_Diagram
 left to right direction
 skinparam packageStyle rectangle
 skinparam shadowing false
 
-actor User as user
+actor "User" as user
 actor "Email Validation Service" as emailSvc
 
 rectangle "Sproutly" {
+  usecase "Create Account" as UC_Create
+  usecase "Login" as UC_Login
+  usecase "Manage Garden" as UC_Garden
+  usecase "Manage Plants" as UC_Plants
 
-  (Create Account) as UC_Create
-  (Login) as UC_Login
-  (Manage Garden) as UC_Garden
-  (Manage Plants) as UC_Plants
+  usecase "Add Plant" as UC_Add
+  usecase "Update Plant" as UC_Update
+  usecase "Remove Plant" as UC_Remove
 
-  (Verify Email Format) as UC_VerifyEmail
-  (Verify Credentials) as UC_VerifyCreds
-  (Authenticate User) as UC_Auth
-
-  (Display Email Error) as UC_EmailErr
-  (Display Invalid Credentials) as UC_CredErr
-
-  (Add Plant) as UC_Add
-  (Update Plant) as UC_Update
-  (Remove Plant) as UC_Remove
-
-  ' Actor relationships (primary)
   user --> UC_Create
   user --> UC_Login
   user --> UC_Garden
+  user --> UC_Plants
 
-  ' Mandatory sub-behavior
-  UC_Create ..> UC_VerifyEmail : <<include>>
-  UC_Login  ..> UC_VerifyCreds : <<include>>
-  UC_Garden ..> UC_Auth        : <<include>>
-
-  ' Conditional behavior (extensions) - correct direction
-  UC_EmailErr ..> UC_Create : <<extend>>
-  UC_CredErr  ..> UC_Login  : <<extend>>
-
-  ' Garden decomposition
-  UC_Garden --> UC_Plants
   UC_Plants ..> UC_Add    : <<include>>
   UC_Plants ..> UC_Update : <<include>>
   UC_Plants ..> UC_Remove : <<include>>
 
-  ' External service interaction
-  emailSvc --> UC_VerifyEmail
-  UC_VerifyEmail -[hidden]-> emailSvc
+  emailSvc --> UC_Create
 
-  note right of UC_Auth
-  Precondition for protected features:
-  User must be authenticated.
+  note right of UC_Garden
+    Precondition: User is authenticated.
+  end note
+
+  note bottom of UC_Create
+    Valid email format is required.
+    Validation/errors are alternate flows (see Activity/Requirements).
   end note
 }
-
 @enduml
-
-
