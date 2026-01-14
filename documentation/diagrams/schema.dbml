@@ -1,0 +1,57 @@
+Table user {
+  id int [pk]
+  name varchar
+  email varchar
+  location varchar
+  zip int
+  created_on datetime
+}
+
+Table garden {
+  id int [pk]
+  user_id int [ref: > user.id]
+  name varchar
+  description varchar
+  location varchar
+}
+
+Table plant {
+  id int [pk]
+  garden_id int [ref: > garden.id]
+  plant_type_id int [ref: > plant_type.id]
+  note_id int [ref: > note.id]
+  nickname varchar
+  planted_on datetime
+}
+
+Table plant_type {
+  id int [pk]
+  common_name varchar
+  scientific_name varchar
+  sun_requirements varchar
+  water_needs varchar
+  nutrient_requirements varchar
+  space_requirements int
+  description varchar
+}
+
+Table note {
+  id int [pk]
+  user_id int [ref: > user.id]
+  note varchar
+  created_at datetime
+}
+
+Table watering_log {
+  id int [pk]
+  plant_id int [ref: > plant.id]
+  note_id int [ref: > note.id]
+  watered_at datetime
+}
+
+Table nutrient_log {
+  id int [pk]
+  plant_id int [ref: > plant.id]
+  note_id int [ref: > note.id]
+  nutrients_given_at datetime
+}
